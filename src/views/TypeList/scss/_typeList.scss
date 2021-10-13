@@ -10,13 +10,12 @@
     margin: 0 auto;
     width: min-content;
     
-    
       @include tablet {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         align-items: center;
         justify-content: center;
-        gap: 25px;
+        gap: 10px;
         margin: 0;
         width: auto;
       }
@@ -25,9 +24,4 @@
 
 .loading_msg {
   color: $color-txt-light;
-}
-
-.pagination_container {
-  // grid-column: 10 / span all;
-  // width: 100%;
 }

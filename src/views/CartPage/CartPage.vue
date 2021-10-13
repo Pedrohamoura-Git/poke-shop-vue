@@ -2,8 +2,8 @@
 
 <template>
  <div class="cart_page">
-  <template v-if="allCartItems == 0">
-   O carrinho está vazio...
+  <template class="empty_cart" v-if="allCartItems == 0">
+   <h3 class="empty_cart__txt">O carrinho está vazio...</h3>
   </template>
   <div class="all_cart_items" v-else>
    <template v-for="(item, index) in allCartItems" :key="index">

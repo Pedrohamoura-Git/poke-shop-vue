@@ -1,7 +1,7 @@
 const successfulMsg = {
   namespaced: true,
   state: {
-    showPurchaseMsg: true,
+    showPurchaseMsg: false,
   },
   mutations: {
     mutateShowPurchaseMsg(state) {

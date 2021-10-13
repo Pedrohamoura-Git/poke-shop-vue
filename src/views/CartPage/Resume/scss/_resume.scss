@@ -1,11 +1,18 @@
 @import '../../../../assets/scss/index.scss';
 
 .resume {
+  background: $color-rgba-bg-cards;
+  border-radius: 10px;
   padding: 30px 10px;
   width: 100%;
-  
+
   @include tablet {
     padding: 0px 20px;
+  }
+
+  @include desktop {
+    max-height: 350px;
+    width: 400px;
   }
 
   &__details {
@@ -72,6 +79,7 @@
       fill: white;
     }
   }
+
   p {
     color: $color-txt-light;
   }

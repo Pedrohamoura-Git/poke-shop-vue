@@ -37,7 +37,7 @@ export default {
  },
  mounted() {
   Promise.all([getPokemonByName(this.paramName)]).then((data) => {
-   this.updateselectedPokemon(data[0]);
+   this.updateSelectedPokemon(data[0]);
   });
  },
  computed: {
@@ -46,7 +46,7 @@ export default {
   },
  },
  methods: {
-  updateselectedPokemon(data) {
+  updateSelectedPokemon(data) {
    this.selectedPokemon.abilities = data.abilities.map(({ ability }) => {
     return capitalize(ability.name);
    });
