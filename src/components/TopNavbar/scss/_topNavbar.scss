@@ -1,0 +1,33 @@
+@import '../../../assets/scss/index.scss';
+
+.nav {
+  background: $color-bg-body-transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100vw;
+  padding: $padding-small $padding-medium;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+
+
+  &__label {
+    display: none;
+  }
+
+  &__logo {
+    height: 50px;
+    margin-left: 20px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+  }
+}

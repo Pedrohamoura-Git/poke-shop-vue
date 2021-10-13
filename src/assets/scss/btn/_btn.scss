@@ -1,0 +1,47 @@
+// @import './index.scss';
+
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 7px 12px;
+  transition: $transition-time-quick;
+  width: max-content;
+  text-align: center;
+  text-transform: none;
+
+  &:hover {
+   cursor: pointer;
+  }
+
+  &--close_card {
+   background-color: transparent;
+   position: absolute;
+   top: -2px;
+   right: -5px;
+
+   svg {
+    transform: scale(0.85);
+    path {
+     fill: $color-btn-close;
+    }
+   }
+
+   &:hover {
+    svg {
+     path {
+      fill: $bg-color-warning;
+     }
+    }
+   }
+  }
+
+  &--close {
+   background-color: $bg-color-warning;
+  }
+
+  &--remove {
+    border: 1px solid;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+ }

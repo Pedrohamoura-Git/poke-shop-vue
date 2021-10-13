@@ -1,0 +1,46 @@
+@import '../../../../../assets/scss/index.scss';
+
+.cart_popup {
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.inner {
+  background: $color-bg-popup;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: min(100%, 275px);
+  width: 60%;
+  margin-bottom: 50px;
+  padding: 10px;
+  overflow: scroll;
+
+  @include tablet {
+    height: 400px;
+    width: 50%; 
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .router_link {
+      margin: 10px auto;
+
+      @include desktop {
+        grid-column: 1 / span all;
+      }
+  }
+}

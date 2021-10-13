@@ -1,0 +1,62 @@
+@import '../../../../assets/scss/index.scss';
+
+.cta {
+  background-color: $color-rgba-bg-cards;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: min(100%, 260px);
+  width: min(100%, 750px);
+  margin: 0 auto;
+  padding: 20px 10px;
+
+  &>* {
+    margin: 10px 0;
+  }
+
+
+  @include desktop {
+    padding: 30px;
+  }
+
+
+  &__link {
+    align-self: center;
+    background-color: $bg-color-nav;
+    border-radius: 10px;
+    padding: 10px 30px;
+    text-align: center;
+    width: 210px;
+
+    &__txt {
+      color: $color-txt-light;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.custom_border {
+  margin: 21px 0;
+}
+
+.price {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.payment {
+  &_methods {
+    font-size: .9rem;
+  }
+}
+
+.shipping {
+  display: flex;
+  justify-content: space-between;
+
+
+  &__price {
+    color: green;
+    font-weight: 900;
+  }
+}

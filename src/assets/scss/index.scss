@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import './base/_base.scss';
+@import './btn/_btn.scss';
+
+
+
+* {
+  box-sizing: border-box;
+  color: $color-txt;
+  font-family: "Josefin Sans", sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  background: $color-bg-img-body;
+}
+
+#app {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin: $m-15 auto;
+  width: 95vw;
+
+  @include tablet {
+    width: 90%;
+  }
+}
+
+.router_link {
+  align-self: center;
+  background-color: $bg-color-nav;
+  border-radius: 10px;
+  color: $color-txt-light;
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: capitalize;
+  width: min(100%, 210px);
+}
+
+.custom_border {
+  border: 2px solid $color-border-info;
+  // margin: 10px auto;
+  width: 98%;
+
+  &--top {
+    border-top: 2px solid $color-border-info;
+  }
+
+  &--bottom {
+    border-bottom: 2px solid $color-border-info;
+  }
+
+  &--left {
+    border-left: 2px solid $color-border-info;
+  }
+
+  &--right {
+    border-right: 2px solid $color-border-info;
+  }
+}

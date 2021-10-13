@@ -1,0 +1,31 @@
+@import '../../../assets/scss/index.scss';
+
+.sidenav {
+  background: $color-bg-body-transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: $padding-small;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s ease;
+  width: 45%;
+  z-index: 998;
+
+  @include tablet {
+    align-items: center;
+  width: min(65%, 300px);
+}
+
+  &_link {
+    border: 1px solid;
+    border-radius: 10px;
+    color: $color-txt-light;
+    font-size: clamp(10px, 5vw, 1.5rem);
+    margin: 20px 0;
+    padding: 5px 10px;
+  }
+}

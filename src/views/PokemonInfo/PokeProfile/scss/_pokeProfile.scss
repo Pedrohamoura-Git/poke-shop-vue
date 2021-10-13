@@ -1,0 +1,70 @@
+@import '../../../../assets/scss/index.scss';
+
+.poke_profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 30px 0 50px;
+
+  .poke_name {
+    flex: 1;
+    margin: 50px auto;
+  }
+
+}
+
+.poke_status {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+
+  &>* {
+    padding: 0 20px;
+  }
+
+  h4 {
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
+
+  &__weight {
+    min-width: 100px;
+  }
+
+  &__type {
+    grid-column: 1 / span all;
+    margin: 30px 0px 50px;
+
+    h4 {
+      margin-bottom: 30px;
+    }
+
+    &__link {
+      border: 1px solid;
+      border-radius: 30px;
+      font-size: .9rem;
+      margin: 30px 10px;
+      padding: 10px 30px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &__abilities {
+    grid-column: 1 / span all;
+    padding: 10px 0;
+    position: relative;
+
+    h4 {
+      padding: 10px 0;
+    }
+
+    &__txt {
+      margin: 0 10px;
+    }
+  }
+}

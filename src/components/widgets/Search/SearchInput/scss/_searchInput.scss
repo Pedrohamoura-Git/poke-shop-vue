@@ -1,0 +1,46 @@
+@import '../../../../../assets/scss/index.scss';
+
+.search_input {
+  background: $color-bg-body-transparent;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  padding: $padding-medium;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+
+  @include desktop {
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  &__label {
+    margin-top: 20px;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: 1px solid darken($color-txt-light, 21%);
+    border-radius: 5px;
+    color: $color-txt-light;
+    height: 35px;
+    width: 90vw;
+    padding: $padding-small;
+
+    &:placeholder-shown {
+      letter-spacing: 1px;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @include desktop {
+      width: 55vw;
+    }
+  }
+}

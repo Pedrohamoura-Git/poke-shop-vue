@@ -1,0 +1,111 @@
+@import "../../../assets/scss/index";
+
+.carousel {
+  position: relative;
+  user-select: none;
+
+  .progressbar {
+    background: $color-bg-img-body;
+    border-radius: 30px;
+    display: block;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+
+    &>div {
+      background-color: green;
+      border-radius: 30px;
+      height: 100%;
+    }
+  }
+
+  .img_card {
+    margin: 15px 0;
+    position: relative;
+
+    &>img {
+      display: block;
+      height: 300px;
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  .actions {
+    color: #585858;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+    margin-top: -20px;
+    position: absolute;
+    bottom: 0;
+
+    &>span {
+      cursor: pointer;
+      font-size: 65px;
+      transition: all 250ms;
+
+      &:hover {
+        color: #eee;
+      }
+
+      &.prev {
+        margin-left: 10px;
+        margin-top: 70px;
+
+        @include tablet {
+          transform: scale(1.5);
+        }
+
+        @include desktop {
+          margin: 0;
+        }
+      }
+
+      &.next {
+        margin-right: 10px;
+        margin-top: 70px;
+
+        @include tablet {
+          transform: scale(1.5);
+        }
+
+        @include desktop {
+          margin: 0;
+        }
+      }
+
+    }
+  }
+
+  .thumbnail_card {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .thumbnail__image {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin: 5px;
+      padding: 2px;
+
+      &>img {
+        // width: 100%;
+        height: 60px;
+        width: 60px;
+        transition: all 250ms;
+      }
+
+      &:hover>img,
+      &.active>img {
+        box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.5);
+        opacity: 0.6;
+      }
+    }
+  }
+}

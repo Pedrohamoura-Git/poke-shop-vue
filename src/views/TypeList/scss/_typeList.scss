@@ -1,0 +1,33 @@
+@import '../../../assets/scss/index.scss';
+
+.type_list {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: min-content;
+    
+    
+      @include tablet {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        margin: 0;
+        width: auto;
+      }
+  }
+}
+
+.loading_msg {
+  color: $color-txt-light;
+}
+
+.pagination_container {
+  // grid-column: 10 / span all;
+  // width: 100%;
+}

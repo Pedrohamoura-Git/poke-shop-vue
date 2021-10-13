@@ -1,0 +1,63 @@
+@import '../../../../assets/scss/index.scss';
+
+.cart_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+}
+
+.poke_link {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 21px;
+  width: min-content;
+}
+
+.poke_img {
+  display: block;
+  height: 100px;
+  width: 100px;
+}
+
+.poke_name {
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+input[type=number] {
+  border: 1px solid;
+  border-radius: 10px;
+  height: 30px;
+  width: 60px;
+  text-align: center;
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}

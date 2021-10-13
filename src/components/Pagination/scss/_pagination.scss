@@ -1,0 +1,94 @@
+@import "../../../assets/scss/index.scss";
+
+.pagination {
+  align-self: center;
+  background: $color-bg-body-transparent;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 90%;
+  z-index: 888;
+
+  @include tablet {
+    width: max(30%, 500px);
+    position: static;
+  }
+
+  &>* {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &> :first-child, &> :last-child  {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.1px;
+
+      svg {
+        fill: $color-txt-light;
+      }
+    }
+
+    &> :first-child {
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+
+    &> :last-child {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    &> :nth-child(2), & > :nth-last-of-type(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        fill: $color-txt-light;
+      }
+    }
+  }
+}
+
+.page_item {
+  border: 1px solid $color-border-info;
+  color: $color-txt-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-weight: 700;
+  padding: 5px;
+  transition: $transition-time-quick;
+
+  &:hover {
+    // border: 1px solid red;
+    // border: 1px solid yellowgreen;
+    // border: 1px solid $color-txt-light;
+    border: 1px solid yellow;
+    cursor: pointer;
+    transition: $transition-time-quick;
+  }
+}
+
+.active {
+  background: yellow;
+  cursor: pointer;
+  color: black;
+  transition: $transition-time-quick;
+}

@@ -1,0 +1,88 @@
+@import "../../../assets/scss/index.scss";
+
+.poke-card {
+  flex-shrink: 0;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  position: relative;
+  width: min-content;
+  max-width: 300px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .pokeball {
+    background: #fff;
+    border: 5px solid #000;
+    border-radius: 50%;
+    box-shadow: inset -10px 10px 0 10px #ccc;
+    position: relative;
+    height: 270px;
+    width: 270px;
+    overflow: hidden;
+    transition: $transition-time-quick;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      background: red;
+      height: 50%;
+      width: 100%;
+    }
+
+    &::after {
+      background: #000;
+      height: 7px;
+      width: 100%;
+      top: calc(50% - 5px);
+    }
+
+    &:hover {
+      transform: scale(1.015);
+      transition: $transition-time-quick;
+    }
+
+    &__txt {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      bottom: -10px;
+      right: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      transform: translateX(-50%);
+    }
+
+    &__button {
+      background: #fff;
+      border: 3px solid #7f8c8d;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px black;
+      height: 130px;
+      width: 130px;
+      position: absolute;
+      top: calc(45% - 50px);
+      left: calc(45% - 50px);
+      z-index: 1;
+    }
+
+    &__img {
+      position: absolute;
+      top: -30%;
+      left: -30%;
+      height: 100px;
+      width: 100px;
+      transform: translate(50%, 50%);
+      z-index: 10;
+    }
+  }
+}

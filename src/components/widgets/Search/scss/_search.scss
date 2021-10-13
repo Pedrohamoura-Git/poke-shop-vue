@@ -1,0 +1,22 @@
+@import '../../../../assets/scss/index.scss';
+
+.search {
+
+&__icon {
+  background-color: transparent;
+  border: none;
+  padding-top: 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    transform: scale(1.2);
+
+    path {
+      fill: $color-icons;
+    }
+  }
+}
+}
