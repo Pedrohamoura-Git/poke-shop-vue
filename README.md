@@ -70,7 +70,7 @@ Users should be able to:
 - - CSS Transitions
 - - CSS Transform
 - - CSS Animate.css library 
-- - CSS CSS-animated hamburgers library
+- - CSS CSS-animated delicious hamburgers library
 - Sass
 - - Sass Variables
 - - Sass Mixins
