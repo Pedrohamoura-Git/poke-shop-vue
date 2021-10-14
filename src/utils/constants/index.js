@@ -1,44 +1,4 @@
-<!-- @format -->
-
-<template>
- <div class="home" id="scroll_to_me">
-  <template v-for="(poke, index) in paginationData" :key="index">
-  <router-link :to="{ name: 'TypeList', params: {selectedType: poke.type.en_us}}">
-    <PokeballCard :type="poke.type.pt_br" :imageUrl="poke.image.url" 
-    @click="handleSelectedType(poke.type.en_us)" 
-    />
-  </router-link>
-  </template>
- </div>
- <div class="pagination_container" v-if="pokemon_types_list.length !== 0">
-  <Pagination
-   v-if="pokemon_types_list"
-   :listLength="pokemon_types_list.length"
-   :perPageOptions="perPageOptions"
-   @newPage="pagination.page = $event"
-   @newPerPage="pagination.perPage = $event"
-  />
- </div>
-</template>
-
-<script>
-import PokeballCard from "../../components/PokeballCard/PokeballCard";
-import Pagination from "../../components/Pagination/Pagination.vue";
-
-// import {pokemon_types_list} from "../../utils/constants/index"
-
-const perPageOptions = [4, 8, 12, 20, 50, 100];
-export default {
- components: { PokeballCard, Pagination },
- data() {
-  return {
-   //**pagination**//
-   perPageOptions,
-   pagination: {
-    page: 1,
-    perPage: perPageOptions[2],
-   },
-    pokemon_types_list: [{
+export const pokemon_types_list = [{
     id: 10,
     type: {
       en_us: "fire",
@@ -238,27 +198,3 @@ export default {
     },
   },
 ]
-  };
- },
- computed: {
-  paginationData() {
-   if (!this.pokemon_types_list) return [];
-   else {
-    const firstIndex = (this.pagination.page - 1) * this.pagination.perPage;
-    const lastIndex = this.pagination.page * this.pagination.perPage;
-    return this.pokemon_types_list.slice(firstIndex, lastIndex);
-   }
-  },
- },
- methods: {
-  handleSelectedType(type) {
-    this.mutateSelectedType(type);
-  },
-  mutateSelectedType(type) {
-   this.$store.commit("typeList/mutateSelectedType", type);
-  },
- },
-};
-</script>
-
-<style lang="scss" src="./scss/_home.scss" />

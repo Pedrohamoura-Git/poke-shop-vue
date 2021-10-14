@@ -15,8 +15,7 @@ import PokeProfile from "./PokeProfile/PokeProfile";
 import Cta from "./Cta/Cta";
 
 //* functions
-import { capitalize } from "../../utils/transformData/index";
-import { calcPrice } from "../../utils/transformData/index";
+import { capitalize, calcPrice } from "../../utils/transformData/index";
 import { getPokemonByName } from "../../services/endpoints/pokemon/index";
 
 export default {

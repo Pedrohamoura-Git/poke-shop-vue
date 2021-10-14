@@ -63,7 +63,7 @@ export default {
   },
   addItem() {
    var item = {};
-   item["img"] = this.selectedPokemon.imgs[0];
+   item["img"] = this.filteredImg(this.selectedPokemon.imgs);
    item["queryName"] = this.selectedPokemon.queryName;
    item["name"] = this.selectedPokemon.name.toLowerCase();
    item["quant"] = 1;
@@ -71,6 +71,11 @@ export default {
    item["totalPrice"] = formatCurrency(this.selectedPokemon.priceNum * item.quant);
    this.mutateAddCartItem(item);
    this.index = this.allCartItems.findIndex((item) => item.name === this.name);
+  },
+  filteredImg(imgList) {
+    for(const img of imgList) {
+    if(img != null) return img
+   }
   },
   mutateAddCartItem(item) {
    this.$store.commit("cart/mutateAddCartItem", item);

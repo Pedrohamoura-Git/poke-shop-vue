@@ -85,22 +85,19 @@ export default {
    const pokeList = await getAllPokemonsOfType(this.selectedType);
    const nameList = pokeList.map(({ pokemon }) => pokemon.name);
    const urlList = pokeList.map(({ pokemon }) => pokemon.url);
+   console.log("urlList", JSON.parse(JSON.stringify(urlList)))
    const imgList = await this.handleImgList(urlList);
+   console.log("imgList", JSON.parse(JSON.  stringify(imgList)))
 
    this.updateTypeList(nameList, imgList);
   },
   handleImgList(urlList) {
    var imgList = [];
    var fetches = [];
-   for (const url of urlList) {
-    fetches.push(
-     getImgFromUrl(url).then((img) => {
-      if (img != null) imgList.push(img);
-     })
-    );
-   }
-   return Promise.all(fetches).then(() => {
-    return imgList;
+   for (const url of urlList) fetches.push(getImgFromUrl(url));
+   return Promise.all(fetches).then((allImgs) => {
+      imgList = allImgs
+      return imgList;
    });
   },
   updateTypeList(nameList, imgList) {

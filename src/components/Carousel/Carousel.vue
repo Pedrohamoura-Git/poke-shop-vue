@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
  <div class="carousel" @mouseover="stopTimer" @mouseleave="restartTimer">
   <div class="progressbar" v-if="autoSlideInterval && showProgressBar">
@@ -16,12 +18,12 @@
   </div>
   <div class="thumbnail_card">
    <div
-    v-for="(image, index) in images"
+    v-for="(image, index) in filteredImgs"
     :key="image.index"
     :class="['thumbnail__image', activeImage == index ? 'active' : '']"
     @click="activateImage(index)"
    >
-    <img :src="image" />
+    <img v-if="image !== null" :src="image" />
    </div>
   </div>
  </div>
@@ -47,14 +49,23 @@ export default {
   };
  },
  computed: {
+  filteredImgs() {
+   let filteredImgs = [];
+   for (const image of this.images) {
+    if (image != null) {
+     filteredImgs.push(image);
+    }
+   }
+   return filteredImgs;
+  },
   // currentImage gets called whenever activeImage changes
   // and is the reason why we don't have to worry about the
   // big image getting updated
   currentImage() {
    // eslint-disable-next-line
    this.timeLeft = this.autoSlideInterval;
-  //  return this.images[this.activeImage].big;
-   return this.images[this.activeImage];
+   //  return this.images[this.activeImage].big;
+   return this.filteredImgs[this.activeImage];
   },
   progressBar() {
    //Calculate the width of the progressbar
@@ -66,7 +77,7 @@ export default {
   // or go at the first image if you can't go forward
   nextImage() {
    var active = this.activeImage + 1;
-   if (active >= this.images.length) {
+   if (active >= this.filteredImgs.length) {
     active = 0;
    }
    this.activateImage(active);
@@ -76,7 +87,7 @@ export default {
   prevImage() {
    var active = this.activeImage - 1;
    if (active < 0) {
-    active = this.images.length - 1;
+    active = this.filteredImgs.length - 1;
    }
    this.activateImage(active);
   },
@@ -121,7 +132,8 @@ export default {
  },
  created() {
   //Check if startingImage prop was given and if the index is inside the images array bounds
-  if (this.startingImage && this.startingImage >= 0 && this.startingImage < this.images.length) {
+  // if (this.startingImage && this.startingImage >= 0 && this.startingImage < this.images.length) {
+  if (this.startingImage && this.startingImage >= 0 && this.startingImage < this.filteredImgs.length) {
    this.activeImage = this.startingImage;
   }
   //Check if autoSlideInterval prop was given and if it is a positive number

@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// export const getImgFromUrl = async (url) => {
 export async function getImgFromUrl(url) {
   const pokemonPromise = await axios.get(url);
   const pokemonData = pokemonPromise.data;
