@@ -3,7 +3,7 @@
 <template>
  <div class="type_list" id="scroll_to_me">
   <div class="type_list__content">
-   <Loading v-if="searchRepos.length == 0" />
+   <Loading v-if="filteredPokemons.length == 0" />
    <template v-else v-for="(pokemon, index) in paginationData" :key="index">
     <PokeballCard
      v-if="pokemon.img !== null"
@@ -13,10 +13,10 @@
     />
    </template>
   </div>
-  <div class="pagination_container" v-if="searchRepos.length !== 0">
+  <div class="pagination_container" v-if="filteredPokemons.length !== 0">
    <Pagination
-    v-if="searchRepos"
-    :listLength="searchRepos.length"
+    v-if="filteredPokemons"
+    :listLength="filteredPokemons.length"
     :perPageOptions="perPageOptions"
     @newPage="pagination.page = $event"
     @newPerPage="pagination.perPage = $event"
@@ -66,17 +66,17 @@ export default {
   nameToFilter() {
    return this.$store.state.typeList.nameToFilter;
   },
-  searchRepos() {
+  filteredPokemons() {
    return this.typeList.filter((pokemon) => {
     return pokemon.name.toLowerCase().match(this.nameToFilter);
    });
   },
   paginationData() {
-   if (!this.searchRepos) return [];
+   if (!this.filteredPokemons) return [];
    else {
     const firstIndex = (this.pagination.page - 1) * this.pagination.perPage;
     const lastIndex = this.pagination.page * this.pagination.perPage;
-    return this.searchRepos.slice(firstIndex, lastIndex);
+    return this.filteredPokemons.slice(firstIndex, lastIndex);
    }
   },
  },

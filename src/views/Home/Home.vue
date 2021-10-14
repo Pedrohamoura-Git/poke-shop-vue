@@ -25,8 +25,6 @@
 import PokeballCard from "../../components/PokeballCard/PokeballCard";
 import Pagination from "../../components/Pagination/Pagination.vue";
 
-// import {pokemon_types_list} from "../../utils/constants/index"
-
 const perPageOptions = [4, 8, 12, 20, 50, 100];
 export default {
  components: { PokeballCard, Pagination },

@@ -1,28 +1,16 @@
+<!-- @format -->
+
 <template>
  <div v-if="showSearchInput" class="search_input">
   <label class="search_input__label">
-   <button
-    class="btn btn--close_card"
-    @click.prevent="handleCloseSearchInput()"
-   >
-    <svg
-     width="24"
-     height="24"
-     xmlns="http://www.w3.org/2000/svg"
-     fill-rule="evenodd"
-     clip-rule="evenodd"
-    >
+   <button class="btn btn--close_card" @click.prevent="handleCloseSearchInput()">
+    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
      <path
       d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"
      />
     </svg>
    </button>
-   <input
-    type="text"
-    class="search_input__input"
-    placeholder="Pesquise por nome"
-    @keydown.enter="handleSearchInput($event)"
-   />
+   <input type="text" class="search_input__input" placeholder="Pesquise por nome" @keydown.enter="handleSearchInput($event)" />
   </label>
  </div>
 </template>
@@ -44,27 +32,23 @@ export default {
   },
   handleRoute() {
    const url = location.href;
-   if (
-    !this.selectedTypeIsEmpty() &&
-    !url.match(`type-list/${this.selectedType}`)
-   )
-    this.pushRoute();
+   if (!url.match(`type-list/${this.selectedType}`)) this.pushRoute();
   },
   handleSearchInput(event) {
-   const name = event.target.value;
-   this.mutateNameToFilter(name);
-   this.handleRoute();
-  },
-  selectedTypeIsEmpty() {
-   if (this.selectedType == "") {
+   if (!this.selectedTypeIsEmpty()) {
+    const name = event.target.value;
+    this.mutateNameToFilter(name);
+    this.handleRoute();
+   } else {
     alert("Por favor, selecione o tipo do pokemon antes.");
     this.mutateShowSidebar();
     this.mutateToggleBurger();
     this.mutateShowSearchInput();
-    return true;
-   } else {
-    return false;
    }
+  },
+  selectedTypeIsEmpty() {
+   if (this.selectedType == "") return true;
+   else return false;
   },
   mutateShowSearchInput() {
    this.$store.commit("search/mutateShowSearchInput");
