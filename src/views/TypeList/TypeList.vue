@@ -85,9 +85,7 @@ export default {
    const pokeList = await getAllPokemonsOfType(this.selectedType);
    const nameList = pokeList.map(({ pokemon }) => pokemon.name);
    const urlList = pokeList.map(({ pokemon }) => pokemon.url);
-   console.log("urlList", JSON.parse(JSON.stringify(urlList)))
    const imgList = await this.handleImgList(urlList);
-   console.log("imgList", JSON.parse(JSON.  stringify(imgList)))
 
    this.updateTypeList(nameList, imgList);
   },
