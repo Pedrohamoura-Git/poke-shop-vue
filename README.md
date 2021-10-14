@@ -63,17 +63,21 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
+- CSS custom properties
 - CSS Grid
 - CSS Animations
 - - CSS Transitions
 - - CSS Transform
-- SASS
-- Mobile-first workflow
+- - CSS Animate.css library 
+- - CSS CSS-animated hamburgers library
+- Sass
+- - Sass Variables
+- - Sass Mixins
 - Vue.JS
-- Vue.js Transitions
-- VueX
+- - VueX
+- - Vue Router
+- Mobile-first workflow
 
 ### What I learned
 
