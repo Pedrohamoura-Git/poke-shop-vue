@@ -12,7 +12,7 @@ module.exports = {
   },
   rules: {
     "no-console": ["error", {
-      "allow": ["warn", "error", "log"]
+      "allow": ["warn", "error"]
     }],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
