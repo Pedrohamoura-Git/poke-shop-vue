@@ -1,33 +1,42 @@
+<!-- @format -->
+
 <template>
- <TopNavbar />
- <div class="wrapper">
-  <transition
-   enter-active-class="animate__animated animate__slideInRight animate__faster"
-   leave-active-class="animate__animated animate__slideOutRight animate__faster"
-   mode="out-in"
-   appear
-  >
-   <Sidenav />
-  </transition>
-  <router-view />
- </div>
+  <TopNavbar />
+  <div class="wrapper">
+   <transition
+    enter-active-class="animate__animated animate__slideInRight animate__faster"
+    leave-active-class="animate__animated animate__slideOutRight animate__faster"
+    mode="out-in"
+    appear
+   >
+    <Sidenav />
+   </transition>
+   <router-view v-slot="{ Component }">
+    <transition
+     enter-active-class="animate__animated animate__fadeIn animate__faster"
+     leave-active-class="animate__animated animate__fadeOut animate__faster"
+     mode="out-in"
+    >
+     <component :is="Component" />
+    </transition>
+   </router-view>
+  </div>
   <SuccessMsg />
 </template>
 
 <script>
-import TopNavbar from "./components/TopNavbar/TopNavbar.vue"
+import TopNavbar from "./components/TopNavbar/TopNavbar.vue";
 import Sidenav from "./components/Sidenav/Sidenav.vue";
 import SuccessMsg from "./components/widgets/SuccessMsg/SuccessMsg.vue";
 
 //** Functions
 //* Requests
-import {LocalStorageIsEmpty} from './utils/localStorage/index'
-import {getAllCartItemsFromLocalStorage} from './utils/localStorage/index'
-import {setAllCartItemsInLocalStorage} from './utils/localStorage/index'
-
+import { LocalStorageIsEmpty } from "./utils/localStorage/index";
+import { getAllCartItemsFromLocalStorage } from "./utils/localStorage/index";
+import { setAllCartItemsInLocalStorage } from "./utils/localStorage/index";
 
 export default {
-  components: { TopNavbar, Sidenav, SuccessMsg},
+ components: { TopNavbar, Sidenav, SuccessMsg },
  mounted() {
   this.handleLocalStorage();
  },
@@ -35,22 +44,22 @@ export default {
   allCartItems() {
    return this.$store.state.cart.allCartItems;
   },
-},
+ },
  watch: {
   allCartItems: {
    deep: true,
    handler() {
     if (this.allCartItems != null) setAllCartItemsInLocalStorage(this.allCartItems);
-   },  
-  },  
+   },
+  },
  },
  methods: {
   handleLocalStorage() {
    const resp = LocalStorageIsEmpty();
    if (resp && this.allCartItems.length == 0) {
-     const localAllCartItems = getAllCartItemsFromLocalStorage();
-      this.mutateAllCartItems(localAllCartItems);
-   } 
+    const localAllCartItems = getAllCartItemsFromLocalStorage();
+    this.mutateAllCartItems(localAllCartItems);
+   }
   },
   mutateAllCartItems(allItems) {
    this.$store.commit("cart/mutateAllCartItems", allItems);

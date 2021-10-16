@@ -1,20 +1,36 @@
 <template>
- <div class="cart_popup" v-if="showCartPopup" @click="mutateShowCartPopup()">
+ <section 
+    class="cart_popup" 
+    v-if="showCartPopup"
+    @click="mutateShowCartPopup()"
+  >
   <div class="inner" v-if="allCartItems">
-   <router-link class="router_link" :to="{ name: 'CartPage' }">Ver Carrinho</router-link>
-   <router-link v-for="(pokemon, index) in allCartItems" :key="index" 
-   :to="{ name: 'PokemonInfo', params: { name: `${pokemon.queryName}` } }">
-    <PopupInfo :popupInfo="pokemon" />
+  <div class="cart_page_link">
+    <router-link class="router_link" :to="{ name: 'CartPage' }">
+    Ver Carrinho
    </router-link>
   </div>
- </div>
+
+  <div class="all_cart_items">
+   <router-link 
+    v-for="(pokemon, index) in allCartItems" 
+    :key="index" 
+    :to="{name: 'PokemonInfo', params: {name: `${pokemon.queryName}` }}"
+    >
+
+      <PopupItem :popupItem="pokemon" />
+
+    </router-link>
+  </div>
+  </div>
+ </section>
 </template>
 
 <script>
-import PopupInfo from "./PopupInfo/PopupInfo";
+import PopupItem from "./PopupItem/PopupItem";
 
 export default {
- components: { PopupInfo },
+ components: { PopupItem },
  computed: {
   showCartPopup() {
    return this.$store.state.cart.showCartPopup;

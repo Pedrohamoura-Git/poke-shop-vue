@@ -1,5 +1,5 @@
 <template>
- <div class="cta">
+ <aside class="cta">
   <div class="payment">
    <h3 class="price">{{ price() }}</h3>
    <p class="payment_methods">
@@ -13,7 +13,7 @@
   </div>
   <div class="custom_border--bottom"></div>
   <router-link class="router_link" @click="handleCartItem()" :to="{ name: 'CartPage' }">comprar</router-link>
- </div>
+ </aside>
 </template>
 <script>
 

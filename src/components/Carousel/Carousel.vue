@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
- <div class="carousel" @mouseover="stopTimer" @mouseleave="restartTimer">
+ <section class="carousel" @mouseover="stopTimer" @mouseleave="restartTimer">
   <div class="progressbar" v-if="autoSlideInterval && showProgressBar">
    <div :style="{ width: progressBar + '%' }"></div>
   </div>
@@ -26,7 +26,7 @@
     <img v-if="image !== null" :src="image" />
    </div>
   </div>
- </div>
+ </section>
 </template>
 
 <script>

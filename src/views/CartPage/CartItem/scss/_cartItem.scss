@@ -6,9 +6,10 @@
   justify-content: space-around;
   padding: 15px 0;
   width: 100%;
-
+  
   @include tablet {
     flex-direction: column;
+    margin: 0; 
   }
 
   &__actions {

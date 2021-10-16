@@ -19,7 +19,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: min(100%, 275px);
+  height: min(100%, 350px);
   width: 60%;
   margin-bottom: 50px;
   padding: 10px;
@@ -27,20 +27,22 @@
 
   @include tablet {
     height: 400px;
-    width: 50%; 
+    width: 50%;
   }
+}
+
+
+.cart_page_link {
+  margin: 20px auto;
+}
+
+.all_cart_items {
+  display: flex;
+  flex-direction: column;
 
   @include desktop {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
-  }
-
-  .router_link {
-      margin: 10px auto;
-
-      @include desktop {
-        grid-column: 1 / span all;
-      }
   }
 }

@@ -1,7 +1,7 @@
 <template>
-<div v-if="showSidebar" class="sidenav">
+<aside v-if="showSidebar" class="sidenav">
   <router-link class="sidenav_link" :to="{ name: 'Home' }">Lista de tipos</router-link>
-</div>
+</aside>
 </template>
 
 <script>

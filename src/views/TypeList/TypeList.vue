@@ -1,8 +1,8 @@
 <!-- @format -->
 
 <template>
- <div class="type_list" id="scroll_to_me">
-  <div class="type_list__content">
+ <main class="type_list" id="scroll_to_me">
+  <section class="type_list__content">
    <Loading v-if="filteredPokemons.length == 0" />
    <template v-else v-for="(pokemon, index) in paginationData" :key="index">
     <PokeballCard
@@ -12,8 +12,8 @@
      @click="goToRoute('PokemonInfo', pokemon.name)"
     />
    </template>
-  </div>
-  <div class="pagination_container" v-if="filteredPokemons.length !== 0">
+  </section>
+  <section class="pagination_container" v-if="filteredPokemons.length !== 0">
    <Pagination
     v-if="filteredPokemons"
     :listLength="filteredPokemons.length"
@@ -21,8 +21,8 @@
     @newPage="pagination.page = $event"
     @newPerPage="pagination.perPage = $event"
    />
-  </div>
- </div>
+  </section>
+ </main>
 </template>
 
 <script>
@@ -37,7 +37,7 @@ import { getImgFromUrl } from "../../services/endpoints/img/index";
 //* Router
 import { pushRoute } from "../../utils/routerNavigation/index";
 
-const perPageOptions = [4, 8, 12, 20, 50, 100];
+const perPageOptions = [4, 6, 9, 12, 21, 50, 100];
 export default {
  components: {
   PokeballCard,

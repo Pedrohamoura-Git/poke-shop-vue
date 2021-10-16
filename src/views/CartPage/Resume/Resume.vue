@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
- <div class="resume" v-if="info.itemsQuant > 0">
+ <section class="resume" v-if="info.itemsQuant > 0">
   <router-link class="keep_buying" :to="{ name: 'Home' }">
    <p>continuar comprando</p>
   </router-link>
@@ -15,7 +15,7 @@
   <router-link :to="{ name: 'Home' }" class="complete_purchase" @click="completePurchase()">
    finalizar compra
   </router-link>
- </div>
+ </section>
 </template>
 
 <script>

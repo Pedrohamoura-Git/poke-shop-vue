@@ -1,26 +1,25 @@
 <template>
- <div class="poke_info">
-  <div class="poke_info__details">
-   <Carousel :starting-image="0" :images="selectedPokemon.imgs" :auto-slide-interval="2100" />
+ <main class="poke_info">
+  <article class="poke_info__details">
+   <Carousel 
+   :starting-image="0" 
+   :images="selectedPokemon.imgs" 
+   :auto-slide-interval="2100" />
    <PokeProfile :selectedPokemon="selectedPokemon" />
-  </div>
+  </article>
   <Cta :selectedPokemon="selectedPokemon" />
- </div>
+ </main>
 </template>
 
 <script>
-
 import Carousel from "../../components/Carousel/Carousel";
 import PokeProfile from "./PokeProfile/PokeProfile";
 import Cta from "./Cta/Cta";
-
 //* functions
 import { capitalize, calcPrice } from "../../utils/transformData/index";
 import { getPokemonByName } from "../../services/endpoints/pokemon/index";
-
 export default {
  components: { Carousel, PokeProfile, Cta },
-
  data() {
   return {
    // ** CHANGE TO "selectedPokemon" later
@@ -65,5 +64,3 @@ export default {
  },
 };
 </script>
-
-<style lang="scss" src="./scss/_pokemonInfo.scss" scoped />

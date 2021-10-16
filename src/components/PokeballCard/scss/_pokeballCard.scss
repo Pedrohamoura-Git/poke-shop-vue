@@ -1,9 +1,12 @@
 @import "../../../assets/scss/index.scss";
 
 .poke-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   position: relative;
   width: min-content;
   max-width: 300px;
@@ -12,16 +15,40 @@
     cursor: pointer;
   }
 
+  @include tablet {
+    margin-bottom: 20px;
+  }
+
+  @include desktop {
+    margin-bottom: 30px;
+
+  }
+
   .pokeball {
     background: #fff;
     border: 5px solid #000;
     border-radius: 50%;
     box-shadow: inset -10px 10px 0 10px #ccc;
     position: relative;
-    height: 270px;
-    width: 270px;
+    height: 230px;
+    width: 230px;
     overflow: hidden;
     transition: $transition-time-quick;
+
+    &:hover {
+      transform: scale(1.015);
+      transition: $transition-time-quick;
+    }
+
+    @include tablet {
+      height: 250px;
+      width: 250px;
+    }
+
+    @include desktop {
+      height: 270px;
+      width: 270px;
+    }
 
     &::before,
     &::after {
@@ -42,24 +69,21 @@
       top: calc(50% - 5px);
     }
 
-    &:hover {
-      transform: scale(1.015);
-      transition: $transition-time-quick;
-    }
-
     &__txt {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: 1.2rem;
-      height: 100px;
-      width: 100px;
-      position: absolute;
-      bottom: -10px;
-      right: 30px;
-      text-align: center;
-      text-transform: uppercase;
-      transform: translateX(-50%);
+      position: relative;
+      top: 170px;
+      margin: 0 auto;
+      text-transform: capitalize;
+      width: fit-content;
+
+      @include tablet {
+        top: 200px;
+      }
+
+      @include desktop {
+        top: 210px;
+      }
     }
 
     &__button {
@@ -67,22 +91,36 @@
       border: 3px solid #7f8c8d;
       border-radius: 50%;
       box-shadow: 0 0 0 4px black;
-      height: 130px;
-      width: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
       position: absolute;
-      top: calc(45% - 50px);
-      left: calc(45% - 50px);
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
       z-index: 1;
+
+      @include tablet {
+        height: 130px;
+        width: 130px;
+        position: absolute;
+        top: calc(45% - 50px);
+        left: calc(45% - 50px);
+      }
+
     }
 
     &__img {
-      position: absolute;
-      top: -30%;
-      left: -30%;
-      height: 100px;
-      width: 100px;
-      transform: translate(50%, 50%);
+      height: 80px;
+      width: 80px;
       z-index: 10;
+
+      @include tablet {
+        height: 100px;
+        width: 100px;
+      }
     }
+
   }
 }

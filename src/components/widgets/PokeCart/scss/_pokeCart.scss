@@ -20,6 +20,9 @@
   font-weight: 900;
   margin: 0 auto;
   padding: 2px 5px;
+  position: relative;
+  top: 80px;
+  left: 0px;
   width: max-content;
 
   @include tablet {
