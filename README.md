@@ -17,70 +17,63 @@
 
 ### The challenge
 
-Users should be able to:
+Your users should be able to:
 
-- (V) See hover states for all interactive elements on the page
-- (V) Add new todos to the list
-- (V) Mark todos as complete
-- (V) Delete todos from the list
-- (V) Filter by all/active/complete todos
-- (V) Clear all completed todos
-- (V) Toggle light and dark mode
+- (V) View the optimal layout for each page depending on their device's screen size
+- (V) See hover states for all interactive elements throughout the site
+- (V) Click the "About Me" call-to-action on the homepage and have the screen scroll down to the next section
+- (V) Receive an error message when the contact form is submitted if:
+- - (V) The Name, Email Address or Message fields are empty should show "This field is required" 
+- - (V) The Email Address is not formatted correctly should show "Please use a valid email address"
 
 ### Screenshots
 
   *OBS: THE IMAGES MAY NOT BE IN THE SAME SCALE.*
 
-# MODEL - Frontend Mentor -  Todo app preview
+# MY SOLUTION - Frontend Mentor -  Minimalist Portfolio solution
 
 
-<!-- <span>
-  <img src="src/assets/design/desktop-preview.jpg" width="640px" style="display: inline">
+<span>
+  <img src="/src/assets/images/projects/minimalist-portfolio/minimalist-porfolio-desktop.png" width="640px" style="display: inline">
 </span>
 <span>
-  <img src="src/assets/design/mobile-design-dark.jpg" height="640px" style="display: inline">
-</span> -->
-
-# MY SOLUTION - Frontend Mentor -  Todo app solution
-
-
-<!-- <span>
-  <img src="src/assets/design/solution-desktop-dark.png" width="640px" style="display: inline">
+  <img src="./src/assets/images/projects/minimalist-portfolio/minimalist-porfolio-mobile.png" height="640px" style="display: inline">
 </span>
-<span>
-  <img src="src/assets/design/solution-mobile-dark.png" height="640px" style="display: inline">
-</span> -->
 
 
 
 ### Links
 
-<!-- - Live Site URL: [https://pedro-todo-vuejs-app.netlify.app](Vue - Todo App) -->
-- Live Site: <a href="https://pedro-vuejs-todo-app.netlify.app" alt="Todo app" target="_blank">Todo app Challenge</a>
+- Live Site URL: - <a href="https://pedro-meuportfolio.netlify.app" target="_blank" alt="">My portfolio</a>
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
+- CSS custom properties
 - CSS Grid
 - CSS Animations
 - - CSS Transitions
 - - CSS Transform
-- SASS
-- Mobile-first workflow
+- - CSS Animate.css library 
+- - CSS CSS-animated delicious hamburgers library
+- Sass
+- - Sass Variables
+- - Sass Mixins
 - Vue.JS
-- Vue.js Transitions
-- VueX
+- - VueX
+- - Vue Router
+- Mobile-first workflow
 
 ### What I learned
 
+This project was a great opportunity to practice Vue-Router and some CSS animation libraries. The portfolio will also be useful to show my past and future projects.
 
-This challenge was a great opportunity to test my CSS, JS and Vue.JS skills. I need to do some research to learn a little more about how Vue handles transitions, how to work correctly with 'created' and 'watch' methods, theme switcher, arrow functions, and how to set elements in local storage.
+### Continued development
 
-### Continued developmen
+To my next project I want to test my Vue.JS skills by using an API.
 
 To my next project I want to test my JS skills by using an API.
 
