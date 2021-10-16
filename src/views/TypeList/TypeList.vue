@@ -50,7 +50,7 @@ export default {
    perPageOptions,
    pagination: {
     page: 1,
-    perPage: perPageOptions[2],
+    perPage: perPageOptions[3],
    },
 
    typeList: [],

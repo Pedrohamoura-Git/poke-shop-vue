@@ -96,7 +96,7 @@ export default {
  data: function() {
   return {
    page: 1,
-   perPage: this.perPageOptions[2],
+   perPage: this.perPageOptions[3],
   };
  },
  computed: {
