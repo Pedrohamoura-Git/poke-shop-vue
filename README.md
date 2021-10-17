@@ -1,11 +1,12 @@
 # Frontend Personal Project - Poke Shop
 
+- Live Site URL: - <a href="https://pedro-poke-shop.netlify.app" target="_blank" alt="">Poke Shop</a>
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshots](#screenshots)
-  - [Links](#links)
+<!--   - [Links](#links) -->
 - [My process](#my-process)
   - [Built with](#built-with)
 <!--   - [What I learned](#what-i-learned)
@@ -21,10 +22,10 @@ Your users should be able to:
 
 - (V) View the optimal layout for each page depending on their device's screen size
 - (V) See hover states for all interactive elements throughout the site
-- (V) Click the "About Me" call-to-action on the homepage and have the screen scroll down to the next section
-- (V) Receive an error message when the contact form is submitted if:
-- - (V) The Name, Email Address or Message fields are empty should show "This field is required" 
-- - (V) The Email Address is not formatted correctly should show "Please use a valid email address"
+- (V) Add new item to the cart
+- (V) See the items in the cart even when the pages reloads
+- (V) Search a pokemon by name
+- (V) Change the item quant in the CartPage
 
 ### Screenshots
 
@@ -34,17 +35,12 @@ Your users should be able to:
 
 
 <span>
-  <img src="/src/assets/images/projects/minimalist-portfolio/minimalist-porfolio-desktop.png" width="640px" style="display: inline">
+  <img src="/public/screenshots/poke-shop-desktop.png" width="640px" style="display: inline">
 </span>
 <span>
-  <img src="./src/assets/images/projects/minimalist-portfolio/minimalist-porfolio-mobile.png" height="640px" style="display: inline">
+  <img src="/public/screenshots/poke-shop-mobile.png" height="640px" style="display: inline">
 </span>
 
-
-
-### Links
-
-- Live Site URL: - <a href="https://pedro-meuportfolio.netlify.app" target="_blank" alt="">My portfolio</a>
 
 ## My process
 
@@ -69,13 +65,11 @@ Your users should be able to:
 
 ### What I learned
 
-This project was a great opportunity to practice Vue-Router and some CSS animation libraries. The portfolio will also be useful to show my past and future projects.
+This project teached me a lot: I had to learn new js functions such as map and reduce, how to better organize my store with modules, how to create and export js files so I can reuse them in other components, how to use router-view transitions, how to work with pagination & carousel components and how to better work with promises.
 
 ### Continued development
 
-To my next project I want to test my Vue.JS skills by using an API.
-
-To my next project I want to test my JS skills by using an API.
+While working in this project I realized that promises can be a confusing, so I want to create another project with APIs to get used to it.
 
 ### Useful resources
 
