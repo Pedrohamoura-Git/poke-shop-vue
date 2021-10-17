@@ -76,7 +76,7 @@ While working in this project I realized that promises can be a confusing, so I 
 - <a href="https://github.com/kapoko/delicious-hamburgers" alt="Delicious Hamburgers" target="_blank">Delicious Hamburgers</a>
 - <a href="https://github.com/athanstan/css-pokeball" alt="CSS-Pokeball" target="_blank">CSS-Pokeball</a>
 - <a href="https://animate.style" alt="CSS Transitions" target="_blank">CSS Transitions</a>
-- <a href="https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp" alt="How TO - Hide Arrows From Input Number." target="_blank">How TO - Hide Arrows From Input Number</a>
+- <a href="https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp" alt="How TO - Hide Arrows From Input Number." target="_blank">How To - Hide Arrows From Input Number</a>
 - <a href="https://stackoverflow.com/questions/38370876/select-penultimate-element" alt="Select penultimate element" target="_blank">Select penultimate element</a>
 - <a href="https://jerickson.net/basics-of-mapstate-vuex/" alt="The basics of mapState" target="_blank">The basics of mapState</a>
 
