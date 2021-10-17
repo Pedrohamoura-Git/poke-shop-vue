@@ -28,6 +28,7 @@ export default {
  methods: {
   handleCloseSearchInput() {
    this.mutateNameToFilter("");
+   this.mutateNameNotFound(false);
    this.mutateShowSearchInput();
   },
   handleRoute() {
@@ -62,13 +63,16 @@ export default {
   mutateNameToFilter(name) {
    this.$store.commit("typeList/mutateNameToFilter", name);
   },
+  mutateNameNotFound(value) {
+   this.$store.commit("typeList/mutateNameNotFound", value);
+  },
   pushRoute() {
    this.$router.push({
     name: "TypeList",
     params: { selectedType: this.selectedType },
    });
   },
- },
+ }
 };
 </script>
 

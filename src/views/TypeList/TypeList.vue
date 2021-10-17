@@ -1,7 +1,8 @@
 <!-- @format -->
 
 <template>
- <main class="type_list" id="scroll_to_me">
+<section class="not_found" v-if="nameNotFound">NÃO ENCONTRADO</section>
+ <main class="type_list" id="scroll_to_me"  v-else>
   <section class="type_list__content">
    <Loading v-if="filteredPokemons.length == 0" />
    <template v-else v-for="(pokemon, index) in paginationData" :key="index">
@@ -66,9 +67,14 @@ export default {
   nameToFilter() {
    return this.$store.state.typeList.nameToFilter;
   },
+  nameNotFound() {
+   return this.$store.state.typeList.nameNotFound;
+  },
   filteredPokemons() {
    return this.typeList.filter((pokemon) => {
-    return pokemon.name.toLowerCase().match(this.nameToFilter);
+     const res = pokemon.name.toLowerCase().match(this.nameToFilter);
+      if(res === null) this.mutateNameNotFound(true)
+      else return res 
    });
   },
   paginationData() {
@@ -81,6 +87,9 @@ export default {
   },
  },
  methods: {
+  mutateNameNotFound(value) {
+   this.$store.commit("typeList/mutateNameNotFound", value);
+  },
   async handlePokeCard() {
    const pokeList = await getAllPokemonsOfType(this.selectedType);
    const nameList = pokeList.map(({ pokemon }) => pokemon.name);
