@@ -1,5 +1,6 @@
 <template>
- <main class="poke_info">
+<Loading v-if="selectedPokemon.imgs.length == 0" />
+ <main class="poke_info"  v-else>
   <article class="poke_info__details">
    <Carousel 
    :starting-image="0" 
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import Loading from "../../components/widgets/Loading/Loading";
 import Carousel from "../../components/Carousel/Carousel";
 import PokeProfile from "./PokeProfile/PokeProfile";
 import Cta from "./Cta/Cta";
@@ -19,7 +21,7 @@ import Cta from "./Cta/Cta";
 import { capitalize, calcPrice } from "../../utils/transformData/index";
 import { getPokemonByName } from "../../services/endpoints/pokemon/index";
 export default {
- components: { Carousel, PokeProfile, Cta },
+ components: { Loading, Carousel, PokeProfile, Cta },
  data() {
   return {
    // ** CHANGE TO "selectedPokemon" later
@@ -34,7 +36,8 @@ export default {
   };
  },
  mounted() {
-  Promise.all([getPokemonByName(this.paramName)]).then((data) => {
+  Promise.all([getPokemonByName(this.paramName)])
+  .then((data) => {
    this.updateSelectedPokemon(data[0]);
   });
  },
@@ -64,3 +67,5 @@ export default {
  },
 };
 </script>
+
+<style lang="scss" src="./scss/_pokemonInfo.scss" scoped />

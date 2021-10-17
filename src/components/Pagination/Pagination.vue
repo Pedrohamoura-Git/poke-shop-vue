@@ -125,7 +125,7 @@ export default {
      this.page = this.page < this.TotalPages ? this.page + 1 : this.page;
      break;
     case 2:
-     this.page = this.page < this.TotalPages ? this.page + 2 : this.page;
+     this.page = this.page  + 2 <= this.TotalPages ? this.page + 2 : this.TotalPages;
      break;
     case this.TotalPages:
      this.page = this.TotalPages;
