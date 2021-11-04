@@ -69,7 +69,7 @@ This project teached me a lot: I had to learn new js functions such as map and r
 
 ### Continued development
 
-While working in this project I realized that promises can be a confusing, so I want to create another project with APIs to get used to it.
+While working in this project I realized that promises can be confusing, so I want to create another project with APIs to get used to it.
 
 ### Useful resources
 
