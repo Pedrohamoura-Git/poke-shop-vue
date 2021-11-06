@@ -6,11 +6,10 @@
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshots](#screenshots)
-<!--   - [Links](#links) -->
 - [My process](#my-process)
   - [Built with](#built-with)
-<!--   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development) -->
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -31,7 +30,7 @@ Your users should be able to:
 
   *OBS: THE IMAGES MAY NOT BE IN THE SAME SCALE.*
 
-# MY SOLUTION - Frontend Mentor -  Minimalist Portfolio solution
+# Static Preview
 
 
 <span>
@@ -82,5 +81,5 @@ While working in this project I realized that promises can be confusing, so I wa
 
 ## Author
 
-- Frontend Mentor - [@Pedrohamoura-Git](https://www.frontendmentor.io/profile/Pedrohamoura-Git)
+- My Portfolio - [portfolio](https://pedro-meuportfolio.netlify.app)
 - Instagram - [@ph_pedrohenrique21](https://www.instagram.com/ph_pedrohenrique21/)
