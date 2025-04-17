@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-<section class="not_found" v-if="nameNotFound">NÃO ENCONTRADO</section>
+<section class="not_found" v-if="nameNotFound">Pokémon não encontrado para o tipo selecionado</section>
  <main class="type_list" id="scroll_to_me"  v-else>
   <section class="type_list__content">
    <Loading v-if="filteredPokemons.length == 0" />
@@ -72,7 +72,7 @@ export default {
   },
   filteredPokemons() {
    return this.typeList.filter((pokemon) => {
-     const res = pokemon.name.toLowerCase().match(this.nameToFilter);
+     const res = pokemon.name.toLowerCase().includes(this.nameToFilter.toLowerCase());
       if(res === null) this.mutateNameNotFound(true)
       else return res 
    });
