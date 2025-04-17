@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-@import './base/_base.scss';
-@import './btn/_btn.scss';
-
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import "./base/_base.scss";
+@import "./btn/_btn.scss";
 
 * {
   box-sizing: border-box;
@@ -49,7 +47,6 @@ body {
 
 .custom_border {
   border: 2px solid $color-border-info;
-  // margin: 10px auto;
   width: 98%;
 
   &--top {
@@ -66,5 +63,13 @@ body {
 
   &--right {
     border-right: 2px solid $color-border-info;
+  }
+}
+
+.pagination_container {
+  margin-top: 2rem;
+
+  @include large-desktop {
+    margin-top: 5rem;
   }
 }

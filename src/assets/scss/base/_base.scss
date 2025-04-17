@@ -1,26 +1,30 @@
-$bg-color-nav: #3866B3;
+$bg-color-nav: #3866b3;
 $bg-color-warning: #d65656;
-$color-bg-img-body: radial-gradient(#156F99, #0A2E50);
+$color-bg-img-body: radial-gradient(#156f99, #0a2e50);
 $color-bg-body-transparent: rgba(10, 46, 80, 0.85);
 $color-rgba-bg-cards: rgba(255, 255, 255, 0.7);
 $color-bg-popup: rgba(255, 255, 255, 0.9);
-$color-border-info: lighten(#156F99, 10%);
+$color-border-info: lighten(#156f99, 10%);
 $color-btn-close: #fff;
 $color-icons: #fff;
 $color-txt-light: #fff;
 $color-txt: #000000;
-$transition-time-quick: .2s;
+$transition-time-quick: 0.2s;
 
-//Medium Screen - 768 to 992 screen size
-@mixin desktop{
-  @media only screen and (min-width: 1080px) {
-      @content;
+@mixin large-desktop {
+  @media only screen and (min-width: 1921px) {
+    @content;
   }
 }
 
-//Medium Screen - 575 to 767 screen size
-@mixin tablet{
+@mixin desktop {
+  @media only screen and (min-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin tablet {
   @media only screen and (min-width: 768px) {
-      @content;
+    @content;
   }
 }
