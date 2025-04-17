@@ -1,4 +1,4 @@
-@import '../../../assets/scss/index.scss';
+@import "../../../assets/scss/index.scss";
 
 .sidenav {
   background: $color-bg-body-transparent;
@@ -17,8 +17,9 @@
 
   @include tablet {
     align-items: center;
-  width: min(65%, 300px);
-}
+    width: min(65%, 300px);
+    display: none;
+  }
 
   &_link {
     border: 1px solid;

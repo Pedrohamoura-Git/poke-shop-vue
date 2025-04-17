@@ -1,11 +1,10 @@
-@import '../../../assets/scss/index.scss';
+@import "../../../assets/scss/index.scss";
 
 .nav {
   background: $color-bg-body-transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // height: 100px;
   height: 80px;
   width: 100vw;
   padding: 10px 20px;
@@ -15,19 +14,40 @@
   left: 0;
   z-index: 999;
 
+  @include tablet {
+    padding: 10px 30px;
+  }
+
+  @include desktop {
+    height: fit-content;
+    padding: 10px 70px;
+  }
+
   &__label {
     display: none;
   }
 
   &__logo {
     height: 50px;
-    margin-left: 20px;
   }
 
   &__actions {
     display: flex;
     align-items: center;
     gap: 30px;
+  }
 
+  .pokemon_types_link {
+    display: none;
+
+    @include tablet {
+      display: block;
+      border: 1px solid;
+      border-radius: 10px;
+      color: $color-txt-light;
+      font-size: clamp(10px, 5vw, 1.2rem);
+      margin: 20px 0;
+      padding: 5px 10px;
+    }
   }
 }
