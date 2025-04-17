@@ -1,4 +1,11 @@
 $hamburger-color: #fff;
 
+@import "../../../../assets/scss/index.scss";
 @import "~delicious-hamburgers/scss/base";
 @import "~delicious-hamburgers/scss/animations/chop";
+
+.hamburger.hamburger--chop {
+  @include tablet {
+    display: none;
+  }
+}
