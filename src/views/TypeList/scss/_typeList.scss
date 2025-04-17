@@ -1,7 +1,6 @@
-@import '../../../assets/scss/index.scss';
+@import "../../../assets/scss/index.scss";
 
 .not_found {
-  // background: $color-rgba-bg-cards;
   background: $bg-color-warning;
   border-radius: 10px;
   color: $color-txt-light;
@@ -21,14 +20,19 @@
     justify-content: center;
     margin: 0 auto;
     width: min-content;
-    
-      @include tablet {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        width: auto;
-      }
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      width: auto;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      max-width: 100rem;
+    }
   }
 }

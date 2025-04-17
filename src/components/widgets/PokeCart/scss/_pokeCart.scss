@@ -1,8 +1,8 @@
-@import '../../../../assets/scss/index.scss';
+@import "../../../../assets/scss/index.scss";
 
 .poke_cart {
   position: absolute;
-  top: 130%;
+  top: 180%;
   right: 4%;
 
   @include tablet {
@@ -33,7 +33,7 @@
 }
 
 .pokeball {
-  animation: shake 1.25s cubic-bezier(.36, .07, .19, .97) infinite;
+  animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
   animation-play-state: paused;
   background: #fff;
   border: 2px solid #000;
@@ -95,7 +95,7 @@
   }
 
   &__button {
-    animation: blink .5s alternate infinite;
+    animation: blink 0.5s alternate infinite;
     animation-play-state: paused;
     background: #fff;
     border-radius: 50%;

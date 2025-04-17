@@ -1,4 +1,4 @@
-@import '../../../assets/scss/index.scss';
+@import "../../../assets/scss/index.scss";
 
 .home {
   &__content {
@@ -12,8 +12,13 @@
     @include tablet {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      margin: 0;
+      margin: 0 auto;
       width: auto;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      max-width: 100rem;
     }
   }
 }
